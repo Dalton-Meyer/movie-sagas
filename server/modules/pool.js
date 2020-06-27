@@ -26,10 +26,11 @@ if (process.env.DATABASE_URL) {
     };
 
 } else {
+    require('dotenv').config()
     // only change the things on the right side of the ||
     config = {
-        user: process.env.PG_USER || null, //env var: PGUSER
-        password: process.env.DATABASE_SECRET || null, //env var: PGPASSWORD
+        user: process.env.PG_USER || PGUSER, //env var: PGUSER
+        password: process.env.DATABASE_SECRET || PGPASSWORD, //env var: PGPASSWORD
         host: process.env.DATABASE_SERVER || 'localhost', // Server hosting the postgres database
         port: process.env.DATABASE_PORT || 5432, //env var: PGPORT
         database: process.env.DATABASE_NAME || 'saga_movies_weekend', //env var: PGDATABASE or the name of your database (e.g. database: process.env.DATABASE_NAME || 'koala_holla',)
