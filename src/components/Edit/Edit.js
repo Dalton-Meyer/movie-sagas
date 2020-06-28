@@ -59,7 +59,7 @@ class Edit extends Component {
         <textarea className="descriptionInput" rows="20" cols="40" value={this.state.description} onChange={(event)=>this.handleChange("description",event)}></textarea>
         <label for="descriptionInput">Description</label>
         <Link to="/details"><button onClick={()=>this.handleSubmit()}>Save</button></Link>
-        <Link to="/details"><button>Back to Details</button></Link>
+        <Link to="/details"><button>Back to Details</button></Link> 
       </div>
     )
   }
