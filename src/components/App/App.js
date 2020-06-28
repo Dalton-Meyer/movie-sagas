@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './App.css';
 import MovieList from '../MovieList/MovieList.js';
-import { HashRouter as Router, Route, NavLink } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Details from '../Details/Details.js';
 import Header from '../Header/Header.js';
 import Edit from '../Edit/Edit.js';
 
 class App extends Component {
 
-  // Renders the entire app on the DOM
+  // displays all the information to the dom
+  // also has all the routes set up to go to each page
   render() {
     return (
       <Router>

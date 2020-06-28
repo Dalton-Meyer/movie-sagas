@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-// Header component
+// this is the header component that displays on every page
 
 class Header extends Component {
   render() {

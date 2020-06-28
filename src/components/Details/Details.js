@@ -7,13 +7,13 @@ class Details extends Component {
   componentDidMount(){
     console.log(this.props.details);
   }
+  // maps thru the details global state to get the information
+  // the second map, maps thru to display the array of genres onto the DOM.
   
   render() {
     return (
       // setting the route to /details
       <Route path="/details">
-        {/* {JSON.stringify(this.props.details.title)} */}
-        {/* <h1>{this.props.details}</h1> */}
         <div>
 
           {this.props.details.map((x) => {
@@ -52,7 +52,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(withRouter(Details));
 
-/* Mapping through genres because there can be multiple genres that come through as an array*/
-                              
-/* Mapping through the movie deatils to display each item */
+
                               

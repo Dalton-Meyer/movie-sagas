@@ -34,7 +34,7 @@ class Edit extends Component {
         })
      }
     }
-    // when a use enters in a new title or description,
+    // when a user changes the existing title or description,
     // set state to that user input
     handleChange = (param, event) =>{
         this.setState({
@@ -43,9 +43,10 @@ class Edit extends Component {
     }
     
     // on submit, dispatch to EDIT_MOVIE
+    // send a axios put to edit the information in the database
     handleSubmit = () => {
       if (this.state.title !== '' && this.state.description !== '') {
-        this.props.dispatch({type:'EDIT_MOVIE', payload: this.state}) // TODO: need to finish dispatch FETCH_DETAILS
+        this.props.dispatch({type:'EDIT_MOVIE', payload: this.state}) 
       }else{
         alert('please make sure input are not empty')
       }

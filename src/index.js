@@ -12,6 +12,7 @@ import createSagaMiddleware from 'redux-saga';
 import axios from 'axios';
 import { takeEvery, put } from "redux-saga/effects";
 
+// this is the saga that is used to edit the current data inside the server
 function* editMovies(action) {
   try{
     yield axios.put(`/edit`, action.payload)
@@ -24,9 +25,6 @@ function* editMovies(action) {
 
 // GET on /movies
 function* fetchMovies(action) {
-  // wrap it all in try/catch
-  // yield axios
-  // dispatch the result with put!
   try {
     const response = yield axios.get("/movies");
     yield put({ type: "SET_MOVIES", payload: response.data });
@@ -37,9 +35,6 @@ function* fetchMovies(action) {
 
 // GET on /details
 function* fetchDetails(action) {
-  // wrap it all in try/catch
-  // yield axios
-  // dispatch the result with put!
   try {
     const response = yield axios.get(`/details/${action.payload}`);
     yield put({ type: "SET_DETAILS", payload: response.data});
@@ -50,9 +45,7 @@ function* fetchDetails(action) {
 
 // Create the rootSaga generator function
 function* rootSaga() {
-    // FETCH_MOVIES
     yield takeEvery("FETCH_MOVIES", fetchMovies);
-    // FETCH_DETAILS
     yield takeEvery("FETCH_DETAILS", fetchDetails);
     yield takeEvery("EDIT_MOVIE", editMovies);
 }
