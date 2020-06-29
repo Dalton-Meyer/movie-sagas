@@ -19,10 +19,14 @@ class Details extends Component {
           {this.props.details.map((x) => {
           return (
            <div>
-              <h1>{x.title}</h1>
-              <img src={x.poster}/>
-              <p>{x.description}</p>
-              <Link to="edit"><button>Edit</button></Link>
+               <div className='details'>
+              <h1 className='text-center'>{x.title}</h1>
+              <img  src={x.poster}/>
+              <h3 className='text-center'>Description</h3>
+              <p className='text-center '>{x.description}</p>
+              <Link to="edit"><button className="btn btn-primary btn-lg btn-block">Edit</button></Link>
+              </div>
+              <h3>Genre</h3>
               <ul>
 
               {x.genres.map((genre) => {
