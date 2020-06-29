@@ -72,6 +72,7 @@ class Edit extends Component {
           ]
         });
       };
+      //uses the Redirect to back to details page with the confirmation box
       renderRedirect = () => {
         if (this.state.redirect) {
           return <Redirect to = "/details" />
