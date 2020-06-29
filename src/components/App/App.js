@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router>
         <Header />
-        <div className="App">
+        <div className="container bg overflow-auto h-75 blackBg body-radius p-3">
           <Route exact path="/">
             <MovieList />
           </Route>

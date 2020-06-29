@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, Link, withRouter, Redirect } from "react-router-dom";
-
+import {Card, Container, CardDeck} from 'react-bootstrap'
+import './MovieList.css'
 
 class MovieList extends Component {
   state= {
@@ -10,7 +11,9 @@ class MovieList extends Component {
   // on component mount dispatch to FETCH_MOVIES
   componentDidMount = () => {
     this.props.dispatch({ type: "FETCH_MOVIES" });
+
   };
+   
 
   // on click of a movie poster, dispatch to FETCH_DETAILS
   // with the payload being that movie id so we know which row of the inside the database to get.
@@ -26,17 +29,35 @@ class MovieList extends Component {
     }
   }
 
+  
+
   render() {
+
     return (
-      <div>
+        <div className='container justify-content-center'>
+        <div className='row justify-content-around'>
         {this.renderRedirect()}
         {/* Mapping through movies, which we recieved from the
             movies reducer as props, to grab each poster and dispay it*/}
+
         {this.props.movies.map((movie) => {
           return (
-           <img src={movie.poster} onClick={() => this.getDetails(movie.id) }/>
+            
+            
+                
+          <div className='col col-12 col-md-5 col-xl-3 mx-1 my-2 blackBg rounded'>
+              <div className='row justify-content-around'>
+          <img src={movie.poster}  onClick={() => this.getDetails(movie.id) }/>
+          
+          </div>
+          </div>
+          
+         
+        
           );
         })}
+        
+      </div>
       </div>
     );
   }

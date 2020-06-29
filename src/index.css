@@ -3,3 +3,26 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.body-radius {
+  border-radius: 10px;
+}
+
+
+.blackBg {
+  background-color: black;
+  color: white;
+}
+
+
+.bg {
+  margin-top: 3em;
+  background-color: black;
+  height: 100%;
+}
+
+body {
+  background-color: seashell;
+}
+header{text-align: center;}
