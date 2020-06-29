@@ -54,13 +54,17 @@ class Edit extends Component {
 
   render() {
     return (
-      <div>
+      <div className='edit'>
+          <h3>Title</h3>
         <input type="text" className="titleInput" value={this.state.title} onChange={(event)=>this.handleChange("title",event)}/>
-        <label for="titleInput">Title</label>
+        <br/>
+        <h3>Description</h3>
         <textarea className="descriptionInput" rows="20" cols="40" value={this.state.description} onChange={(event)=>this.handleChange("description",event)}></textarea>
-        <label for="descriptionInput">Description</label>
-        <Link to="/details"><button onClick={()=>this.handleSubmit()}>Save</button></Link>
-        <Link to="/details"><button>Back to Details</button></Link> 
+        <br/>
+        <Link to="/details"><button className="btn btn-primary btn-lg">Back to Details</button></Link> 
+        <br/> <br/>
+        <Link to="/details"><button className="btn btn-primary btn-lg" onClick={()=>this.handleSubmit()}>Save</button></Link>
+        
       </div>
     )
   }
