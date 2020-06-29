@@ -55,6 +55,7 @@ class Edit extends Component {
         alert('please make sure input are not empty')
       }
     }
+    // confirmation box before you edit the movie
     submit = () => {
         confirmAlert({
           title: 'Confirm to submit',
@@ -66,7 +67,7 @@ class Edit extends Component {
             },
             {
               label: 'No',
-              onClick: () => alert('Click No')
+              onClick: () => this.setState({redirect: true})
             }
           ]
         });
